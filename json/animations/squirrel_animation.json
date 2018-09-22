@@ -1,0 +1,31 @@
+{
+  "scale": 1,
+  "duration": 4,
+  "cell_size": [50, 50],
+  "footprint": [25, 50],
+
+  "data": {
+    "body": {"position": [12.5, 25], "size": [25, 25]}
+  },
+
+  "animations": [
+    {
+      "name": "walk",
+      "steps": [
+        {"image": {"position": [0, 5]}},
+        {"image": {"position": [1, 5]}},
+        {"image": {"position": [2, 5]}},
+        {"image": {"position": [3, 5]}},
+        {"image": {"position": [4, 5]}},
+        {"image": {"position": [5, 5]}},
+        {"image": {"position": [6, 5]}},
+        {"image": {"position": [7, 5]}}
+      ]
+    },
+    {
+      "name": "walk_left",
+      "steps": "walk",
+      "mirror": [true, false]
+    }
+  ]
+}

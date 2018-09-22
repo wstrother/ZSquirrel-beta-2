@@ -1,0 +1,24 @@
+{
+ "devices": [
+  {
+   "name": "A",
+   "class": "button",
+   "mapping": ["button_map_key", "space"]
+  },
+
+  {
+   "name": "Start",
+   "class": "button",
+   "mapping": ["button_map_key", "return"]
+  },
+
+  {
+   "name": "Dpad",
+   "class": "dpad",
+   "up": ["button_map_key", "up"],
+   "down": ["button_map_key", "down"],
+   "left": ["button_map_key", "left"],
+   "right": ["button_map_key", "right"]
+  }
+ ]
+}

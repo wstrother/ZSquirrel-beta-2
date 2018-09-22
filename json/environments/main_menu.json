@@ -1,0 +1,24 @@
+{
+  "layers": [
+    {
+      "name": "environment",
+      "class": "Layer",
+      "groups": "sprite_group",
+      "controllers": "default_controller.json"
+    }
+  ],
+
+  "sprites": [
+    {
+      "name": "Main Menu",
+      "class": "BlockSprite",
+      "group": "sprite_group",
+      "controller": ["environment", 0],
+      "position": [100, 100],
+      "UiInterface": {
+        "set_menu": ["directory_menu", "json", "environments"],
+        "add_option": ["quit_option", "Quit Game"]
+      }
+    }
+  ]
+}
