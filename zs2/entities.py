@@ -39,6 +39,8 @@ class Entity(EventHandlerInterface, metaclass=EntityMetaclass):
         self.visible = True
         self.graphics = None
 
+        self.queue_event("spawn")
+
     def __repr__(self):
         c = self.__class__.__name__
         n = self.name
@@ -102,6 +104,9 @@ class Entity(EventHandlerInterface, metaclass=EntityMetaclass):
         if not self.paused:
             for m in self.update_methods:
                 m()
+
+    def on_spawn(self):
+        self.spawned = True
 
     def on_death(self):
         del self

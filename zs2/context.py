@@ -169,6 +169,8 @@ class Context:
         print("created new Group:\n{}".format(g))
 
     def add_entities(self, *entities):
+        output = []
+
         for e in entities:
             name = e[ZsData.NAME]
 
@@ -178,9 +180,12 @@ class Context:
 
             if callable(cls):
                 entity = cls(name)
+                output.append(entity)
 
                 self.model[name] = entity
                 print("\nCreated new Entity:\n{}".format(entity))
+
+        return output
 
     @staticmethod
     def get_init_order(data, order):
@@ -252,6 +257,17 @@ class Context:
                 )
 
             i.apply_to_entity(entity, i_data)
+
+    #
+    # for use by interface methods
+    #
+    def create_entity(self, data):
+        if type(data) is str:
+            data = self.get_resource(data)
+
+        entity = self.add_entities(data)[0]
+        self.init_attributes(entity, data, init=True)
+        self.apply_interfaces(entity, data)
 
 
 class ApplicationInterface:

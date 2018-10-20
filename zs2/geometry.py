@@ -189,6 +189,14 @@ class Rect:
 
         self.position = x, y
 
+    @property
+    def collision_points(self):
+        return (
+            self.topleft, self.topright,
+            self.center,
+            self.bottomleft, self.bottomright
+        )
+
     def get_rect_collision(self, other):
         try:
             collision = self.clip(other.pygame_rect)
